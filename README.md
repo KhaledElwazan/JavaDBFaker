@@ -3,7 +3,7 @@
 ### Currently it creates:
   - a table of students and their addresses (one-to-one relationship)
   
-### To run this tool, write the following:
+### To run this tool, run the following:
   `java -cp JavaDBFaker.jar Main --host 19.180.11.1 --port 3308 --db fakedb --user username --pass password`
   
   Or you could simply run 
