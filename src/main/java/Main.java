@@ -12,6 +12,7 @@ import org.apache.commons.cli.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -138,7 +139,6 @@ public class Main {
         }
     }
 
-
     public static void help() throws InvocationTargetException, IllegalAccessException {
 
 
@@ -146,8 +146,8 @@ public class Main {
 
         for (Method method : mainClass.getMethods()) {
 
-
-            System.out.println(method.getName());
+            if (Modifier.isStatic(method.getModifiers()))
+                System.out.println(method.getName());
 
         }
 
