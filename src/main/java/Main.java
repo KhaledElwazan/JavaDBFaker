@@ -24,40 +24,40 @@ public class Main {
 
         Options options = new Options();
 
-        options.addOption(Option.builder().longOpt("hostname").argName("hostname").hasArg().build());
-        options.addOption(Option.builder().longOpt("portNumber").argName("portNumber").hasArg().build());
-        options.addOption(Option.builder().longOpt("dbName").argName("dbName").hasArg().build());
-        options.addOption(Option.builder().longOpt("username").argName("username").hasArg().build());
-        options.addOption(Option.builder().longOpt("password").argName("password").optionalArg(true).hasArg().build());
+        options.addOption(Option.builder().longOpt("host").argName("host").hasArg().build());
+        options.addOption(Option.builder().longOpt("port").argName("port").hasArg().build());
+        options.addOption(Option.builder().longOpt("db").argName("db").hasArg().build());
+        options.addOption(Option.builder().longOpt("user").argName("user").hasArg().build());
+        options.addOption(Option.builder().longOpt("pass").argName("pass").optionalArg(true).hasArg().build());
 
         CommandLineParser parser = new DefaultParser();
 
         CommandLine cmd = parser.parse(options, args);
 
 
-        String hostname = "localhost";
-        String database = "fakedb";
-        String portNumber = "3306";
+        String host = "localhost";
+        String db = "fakedb";
+        String port = "3306";
         String user = "root";
-        String password = "";
+        String pass = "";
 
-        if (cmd.hasOption("hostname"))
-            hostname = cmd.getOptionValue("hostname");
+        if (cmd.hasOption("host"))
+            host = cmd.getOptionValue("host");
 
-        if (cmd.hasOption("database"))
-            database = cmd.getOptionValue("database");
+        if (cmd.hasOption("db"))
+            db = cmd.getOptionValue("db");
 
-        if (cmd.hasOption("portNumber"))
-            portNumber = cmd.getOptionValue("portNumber");
+        if (cmd.hasOption("port"))
+            port = cmd.getOptionValue("port");
 
         if (cmd.hasOption("user"))
             user = cmd.getOptionValue("user");
 
-        if (cmd.hasOption("password"))
-            password = cmd.getOptionValue("password");
+        if (cmd.hasOption("pass"))
+            pass = cmd.getOptionValue("pass");
 
 
-        URL = "jdbc:mysql://" + hostname + ":" + portNumber + "/" + database + "?user=" + user + "&password=" + password;
+        URL = "jdbc:mysql://" + host + ":" + port + "/" + db + "?user=" + user + "&password=" + pass;
 
 
         //commence local CLI
