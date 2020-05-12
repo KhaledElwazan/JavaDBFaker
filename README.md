@@ -18,3 +18,8 @@
     `createFakeStudents 100`
     
     where 100 is a number indicating the number of records in the tables.
+* to create a fake company and necessary additional tables:
+  
+    `createFakeCompany`
+    
+    to create 500 employees with its departments, its projects and assigning each employee to a certain project.
